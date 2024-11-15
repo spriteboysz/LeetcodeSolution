@@ -16,7 +16,7 @@ class Solution:
             for num in row:
                 if num < 0:
                     cnt += 1
-        return cnt
+        return sum([int(num < 0) for row in grid for num in row])
 
 
 if __name__ == '__main__':
