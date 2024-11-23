@@ -11,9 +11,9 @@ from typing import List
 
 class Solution:
     def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
-        rows = [(i, sum(row)) for i, row in enumerate(mat)]
-        rows.sort(key=lambda el: (el[1], el[0]))
-        return [el[0] for el in rows[:k]]
+        rows = [(sum(row), i) for i, row in enumerate(mat)]
+        rows.sort()
+        return [el[1] for el in rows[:k]]
 
 
 if __name__ == '__main__':
