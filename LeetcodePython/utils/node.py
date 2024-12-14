@@ -24,9 +24,10 @@ class ListNode:
         return '[' + ','.join(values) + ']'
 
     @classmethod
-    def create(cls, data=''):
+    def create(cls, data: [list | str] = ''):
         if not data:
             return []
+        data = str(data)
         values = data[1:-1].split(',')
         dummy = ListNode(-1)
         cur = dummy
