@@ -13,11 +13,23 @@ from utils.node import ListNode
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        pass
+        dummy, carry = ListNode(-1), 0
+        curr = dummy
+        while l1 or l2 or carry:
+            if l1:
+                carry += l1.val
+                l1 = l1.next
+            if l2:
+                carry += l2.val
+                l2 = l2.next
+            carry, mod = divmod(carry, 10)
+            curr.next = ListNode(mod)
+            curr = curr.next
+        return dummy.next
 
 
 if __name__ == '__main__':
-    head1 = ListNode.create('[6,1,7]')
-    head2 = ListNode.create('[2,9,5]')
+    head1 = ListNode.create('[2,4,3]')
+    head2 = ListNode.create('[1]')
     solution = Solution().addTwoNumbers(head1, head2)
     print(solution)
