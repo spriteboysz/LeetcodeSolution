@@ -14,7 +14,7 @@ class Solution:
         words.sort(key=len)
         total = 0
         for i, word1 in enumerate(words):
-            for j, word2 in enumerate(words[i + 1:]):
+            for word2 in words[i + 1:]:
                 if word2.endswith(word1):
                     break
             else:
