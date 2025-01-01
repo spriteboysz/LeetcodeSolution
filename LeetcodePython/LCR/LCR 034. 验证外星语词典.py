@@ -11,8 +11,11 @@ from typing import List
 
 class Solution:
     def isAlienSorted(self, words: List[str], order: str) -> bool:
-        pass
+        index = {ch: i for i, ch in enumerate(order)}
+        lst = [[index[ch] for ch in word] for word in words]
+        return all(lst[i - 1] <= lst[i] for i in range(1, len(lst)))
+
 
 if __name__ == '__main__':
-    solution = Solution().isAlienSorted(words = ["hello","leetcode"], order = "hlabcdefgijkmnopqrstuvwxyz")
+    solution = Solution().isAlienSorted(words=["hello", "leetcode"], order="hlabcdefgijkmnopqrstuvwxyz")
     print(solution)
