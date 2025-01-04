@@ -15,6 +15,7 @@ from icecream import ic
 class Solution:
     def findLonely(self, nums: List[int]) -> List[int]:
         counter = Counter(nums)
+        ic(nums)
         return [num for num, cnt in counter.items() if cnt == 1 and num - 1 not in counter and num + 1 not in counter]
 
 
