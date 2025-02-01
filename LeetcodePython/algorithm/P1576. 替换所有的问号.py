@@ -16,10 +16,9 @@ class Solution:
         for i, ch in enumerate(f'*{s}*'):
             if ch != '?':
                 continue
-            for j in range(26):
-                ch2 = chr(j + ord('a'))
-                if ch2 != ss[i - 1] and ch2 != ss[i + 1]:
-                    ss[i] = ch2
+            for j in range(ord('a'), ord('z') + 1):
+                if chr(j) != ss[i - 1] and chr(j) != ss[i + 1]:
+                    ss[i] = chr(j)
                     break
         return ''.join(ss[1:-1])
 
