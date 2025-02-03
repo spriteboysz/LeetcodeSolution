@@ -8,13 +8,21 @@ Description:
 """
 from typing import List
 
+from icecream import ic
+
 
 class Solution:
     def duplicateZeros(self, arr: List[int]) -> None:
         """
         Do not return anything, modify arr in-place instead.
         """
-        pass
+        i, n = 0, len(arr)
+        while i < n:
+            if arr[i] == 0:
+                arr[i + 1: n] = arr[i: n - 1]
+                i += 1
+            i += 1
+        ic(arr)
 
 
 if __name__ == '__main__':
