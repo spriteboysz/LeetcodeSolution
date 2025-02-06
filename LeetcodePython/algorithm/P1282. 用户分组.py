@@ -17,13 +17,7 @@ class Solution:
         dic = defaultdict(list)
         for i, group in enumerate(groupSizes):
             dic[group].append(i)
-        ic(dic)
-        groups = []
-        for k, v in dic.items():
-            for i in range(0, len(v), k):
-                groups.append(v[i:i + k])
-        return groups
-
+        return [v[i:i + k] for k, v in dic.items() for i in range(0, len(v), k)]
 
 
 if __name__ == '__main__':
