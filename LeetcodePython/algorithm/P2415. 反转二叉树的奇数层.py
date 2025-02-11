@@ -31,8 +31,7 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
             if level % 2 == 1:
-                values = values[::-1]
-                for node, val in zip(nodes, values):
+                for node, val in zip(nodes, values[::-1]):
                     node.val = val
             level += 1
         return root
