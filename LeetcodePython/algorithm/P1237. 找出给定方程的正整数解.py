@@ -24,13 +24,13 @@ class Solution:
         ans, x, y = [], 1, 1000
         while x <= 1000 and y >= 1:
             res = function.f(x, y)
+            if res < z:
+                x += 1
+            elif res > z:
+                y -= 1
             if res == z:
                 ans.append([x, y])
                 x += 1
-                y -= 1
-            elif res > z:
-                x += 1
-            elif res < z:
                 y -= 1
         return ans
 
