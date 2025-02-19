@@ -7,7 +7,6 @@ FileName: P1630. 等差子数组
 Description:
 """
 from typing import List
-from functools import reduce
 
 from icecream import ic
 
