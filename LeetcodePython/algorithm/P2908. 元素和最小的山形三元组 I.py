@@ -13,7 +13,13 @@ from icecream import ic
 
 class Solution:
     def minimumSum(self, nums: List[int]) -> int:
-        pass
+        score = []
+        for i, num1 in enumerate(nums):
+            for j, num2 in enumerate(nums[i:], i):
+                for k, num3 in enumerate(nums[j:]):
+                    if num2 > num1 and num2 > num3:
+                        score.append(num1 + num2 + num3)
+        return min(score) if score else -1
 
 
 if __name__ == '__main__':
