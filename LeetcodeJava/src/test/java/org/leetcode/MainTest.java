@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MainTest {
     @Test
     void test_001() {
-        assertEquals(1, 1);
+        int a = 1;
+        assertEquals(1, a);
     }
 }
