@@ -14,13 +14,10 @@ from icecream import ic
 class Solution:
     def garbageCollection(self, garbage: List[str], travel: List[int]) -> int:
         def calc(g):
-            cnt = ''.join(garbage).count(g)
             last = [i for i, el in enumerate(garbage) if g in el]
-            if last:
-                cnt += sum(travel[:last[-1]])
-            return cnt
+            return sum(travel[:last[-1]]) if last else 0
 
-        return sum(calc(el) for el in ['G', 'P', 'M'])
+        return sum(calc(el) for el in ['G', 'P', 'M']) + len(''.join(garbage))
 
 
 if __name__ == '__main__':
