@@ -23,12 +23,8 @@ class Solution:
                 dfs(x + dx, y + dy)
 
         for i in range(0, len(grid)):
-            for j in [0, len(grid[0]) - 1]:
-                if grid[i][j] == 0:
-                    dfs(i, j)
-        for i in [0, len(grid) - 1]:
             for j in range(len(grid[0])):
-                if grid[i][j] == 0:
+                if grid[i][j] == 0 and (i == 0 or i == len(grid) - 1 or j == 0 or j == len(grid[0]) - 1):
                     dfs(i, j)
 
         cnt = 1
