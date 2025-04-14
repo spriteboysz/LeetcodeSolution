@@ -6,24 +6,22 @@ Date: 2024-12-04 21:41
 FileName: P0056. 合并区间
 Description:
 """
-from collections import defaultdict
 from typing import List
 
 
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        ret, curr, left = [], 0, 0
-        dic = defaultdict(int)
-        for start, end in intervals:
-            dic[start] += 1
-            dic[end] -= 1
-        for i in sorted(dic):
-            if curr == 0:
-                left = i
-            curr += dic[i]
-            if curr == 0:
-                ret.append([left, i])
-        return ret
+        intervals.sort()
+        ranges = []
+        left,right = intervals[0]
+        for s, e in intervals[1:]:
+            if s > right:
+                ranges.append([left, right])
+                left = s
+            right = max(right, e)
+        ranges.append([left, right])
+        return ranges
+
 
 
 if __name__ == '__main__':
