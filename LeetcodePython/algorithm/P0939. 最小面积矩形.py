@@ -17,10 +17,8 @@ class Solution:
         minimum = math.inf
         seen = {tuple(point) for point in points}
         points = list(seen)
-        for i, point1 in enumerate(points):
-            for point2 in points[:i]:
-                x1, y1 = point1
-                x2, y2 = point2
+        for i, (x1, y1) in enumerate(points):
+            for x2, y2 in points[:i]:
                 if x1 == x2 or y1 == y2:
                     continue
                 if (x1, y2) in seen and (x2, y1) in seen:
