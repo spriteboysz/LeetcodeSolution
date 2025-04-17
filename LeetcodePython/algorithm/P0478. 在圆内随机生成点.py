@@ -21,7 +21,8 @@ class Solution:
         self.area = math.pi * radius ** 2
 
     def randPoint(self) -> List[float]:
-        theta, r = random.uniform(0.0, math.pi * 2), math.sqrt(random.uniform(0.0, self.area) / math.pi)
+        theta = random.uniform(0.0, math.pi * 2)
+        r = math.sqrt(random.uniform(0.0, self.area) / math.pi)
         return [self.x + math.cos(theta) * r, self.y + math.sin(theta) * r]
 
 
