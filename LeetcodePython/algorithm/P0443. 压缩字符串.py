@@ -14,7 +14,7 @@ from icecream import ic
 class Solution:
     def compress(self, chars: List[str]) -> int:
         cnt, cur, pos = 1, 1, 1
-        for i in range(1, len(chars) + 1):
+        for i in range(1, len(chars)):
             if chars[i] == chars[i - 1]:
                 cur += 1
             else:
@@ -30,6 +30,7 @@ class Solution:
             chars[pos:pos + n] = list(str(cur))
             pos += n
         chars = chars[:pos]
+        ic(chars)
         return pos
 
 
