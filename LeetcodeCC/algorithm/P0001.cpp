@@ -5,8 +5,8 @@
  * Description:
  */
 
-#include <iostream>
-#include <vector>
+#include "../lib/code.h"
+
 using namespace std;
 
 class Solution {
