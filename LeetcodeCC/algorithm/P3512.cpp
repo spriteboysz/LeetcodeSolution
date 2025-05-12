@@ -5,7 +5,7 @@
  * Description: 3512. 使数组和能被 K 整除的最少操作次数
  */
 
-#include "../lib/codec.h"
+#include "../lib/leetcode.h"
 
 using namespace std;
 

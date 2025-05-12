@@ -5,7 +5,7 @@
  * Description:
  */
 
-#include "../lib/codec.h"
+#include "../lib/leetcode.h"
 
 using namespace std;
 

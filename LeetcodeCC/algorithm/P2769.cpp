@@ -5,7 +5,7 @@
  * Description: 2769. 找出最大的可达成数字
  */
 
-#include "../lib/codec.h"
+#include "../lib/leetcode.h"
 
 using namespace std;
 
