@@ -5,7 +5,7 @@
  * Description: 3110. 字符串的分数
  */
 
-#include "../lib/code.h"
+#include "../lib/codec.h"
 
 using namespace std;
 

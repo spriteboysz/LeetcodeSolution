@@ -5,7 +5,7 @@
  * Description: 2769. 找出最大的可达成数字
  */
 
-#include "../lib/code.h"
+#include "../lib/codec.h"
 
 using namespace std;
 
