@@ -6,6 +6,7 @@ Date: 2025-06-12 23:08
 FileName: algorithm/P3011. 判断一个数组是否可以变为有序.py
 Description: 
 """
+from itertools import pairwise
 from typing import List
 
 from icecream import ic
@@ -22,7 +23,7 @@ class Solution:
             curr.append(nums[i])
         group.append(curr)
         nums2 = sum([sorted(sub) for sub in group], [])
-        return all(nums2[i] >= nums2[i - 1] for i in range(1, len(nums2)))
+        return all(y >= x for x, y in pairwise(nums2))
 
 
 if __name__ == '__main__':
