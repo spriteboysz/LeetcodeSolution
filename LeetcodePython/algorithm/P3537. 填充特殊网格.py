@@ -30,5 +30,5 @@ class Solution:
 
 
 if __name__ == '__main__':
-    solution = Solution().specialGrid(2)
+    solution = Solution().specialGrid(3)
     ic(solution)
