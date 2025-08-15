@@ -7,12 +7,13 @@ FileName: node
 Description:
 """
 from collections import deque
+from typing import Union
 
 
 class ListNode:
-    def __init__(self, val=0, next=None):
+    def __init__(self, val=0, next_=None):
         self.val = val
-        self.next = next
+        self.next = next_
 
     def __str__(self):
         if not self:
@@ -24,7 +25,7 @@ class ListNode:
         return '[' + ','.join(values) + ']'
 
     @classmethod
-    def create(cls, data: [list | str] = ''):
+    def create(cls, data: Union[list, str] = ''):
         if not data:
             return []
         data = str(data)

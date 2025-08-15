@@ -20,7 +20,7 @@ class Solution:
                 if num == 1:
                     rows[i] += 1
                     columns[j] += 1
-        pass
+        return 0
 
 
 if __name__ == '__main__':

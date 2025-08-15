@@ -6,7 +6,6 @@ Date: 2024-12-12 22:52
 FileName: P0235. 二叉搜索树的最近公共祖先
 Description:
 """
-from idlelib.debugobj_r import remote_object_tree_item
 
 from utils.node import TreeNode
 
