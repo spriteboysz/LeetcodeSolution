@@ -17,3 +17,7 @@ class Solution:
 if __name__ == '__main__':
     s = Solution().minOperations([1, 2, 3, 4])
     print(s)
+    import time
+    for i in range(100):
+        time.sleep(1)
+        print(i)
