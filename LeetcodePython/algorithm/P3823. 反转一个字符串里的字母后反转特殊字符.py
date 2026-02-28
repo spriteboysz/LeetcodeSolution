@@ -10,9 +10,9 @@ Description:
 
 class Solution:
     def reverseByType(self, s: str) -> str:
-        lower = [ch for ch in s if ch.islower()][::-1]
-        other = [ch for ch in s if not ch.islower()][::-1]
-        return ''.join(lower.pop(0) if ch.islower() else other.pop(0) for ch in s)
+        lower = [ch for ch in s if ch.islower()]
+        other = [ch for ch in s if not ch.islower()]
+        return ''.join(lower.pop() if ch.islower() else other.pop() for ch in s)
 
 
 if __name__ == '__main__':
