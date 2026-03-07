@@ -13,10 +13,10 @@ from collections import Counter
 class Solution:
     def minDistinctFreqPair(self, nums: list[int]) -> list[int]:
         counter = Counter(nums)
-        a = min(nums)
-        for num in sorted(set(nums)):
-            if counter.get(num) != counter.get(a):
-                return [a, num]
+        seen = sorted(set(nums))
+        for num in seen[1:]:
+            if counter.get(num) != counter.get(seen[0]):
+                return [seen[0], num]
         return [-1, -1]
 
 
