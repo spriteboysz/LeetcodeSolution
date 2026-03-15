@@ -1,11 +1,10 @@
 create database P0511;
 use P0511;
 
-Create table If Not Exists Activity
-(
-    player_id    int,
-    device_id    int,
-    event_date   date,
+Create table If Not Exists Activity (
+    player_id int,
+    device_id int,
+    event_date date,
     games_played int
 );
 Truncate table Activity;

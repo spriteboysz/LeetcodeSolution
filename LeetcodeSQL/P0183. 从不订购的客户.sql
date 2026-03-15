@@ -1,14 +1,12 @@
 create database P0183;
 use P0183;
 
-Create table If Not Exists Customers
-(
-    id   int,
+Create table If Not Exists Customers (
+    id int,
     name varchar(255)
 );
-Create table If Not Exists Orders
-(
-    id         int,
+Create table If Not Exists Orders (
+    id int,
     customerId int
 );
 Truncate table Customers;

@@ -1,18 +1,16 @@
 create database P0175;
 use P0175;
 
-Create table If Not Exists Person
-(
-    personId  int,
+Create table If Not Exists Person (
+    personId int,
     firstName varchar(255),
-    lastName  varchar(255)
+    lastName varchar(255)
 );
-Create table If Not Exists Address
-(
+Create table If Not Exists Address (
     addressId int,
-    personId  int,
-    city      varchar(255),
-    state     varchar(255)
+    personId int,
+    city varchar(255),
+    state varchar(255)
 );
 Truncate table Person;
 insert into Person (personId, lastName, firstName)

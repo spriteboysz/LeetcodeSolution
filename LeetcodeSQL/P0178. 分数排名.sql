@@ -2,9 +2,8 @@ create database P0178;
 
 use P0178;
 
-Create table If Not Exists Scores
-(
-    id    int,
+Create table If Not Exists Scores (
+    id int,
     score DECIMAL(3, 2)
 );
 Truncate table Scores;
@@ -21,4 +20,7 @@ values ('5', '4.0');
 insert into Scores (id, score)
 values ('6', '3.65');
 
-select score from Scores as it group by score order by score desc;
+select score
+from Scores as it
+group by score
+order by score desc;

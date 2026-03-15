@@ -1,9 +1,8 @@
 create database P0176;
 use P0176;
 
-Create table If Not Exists Employee
-(
-    id     int,
+Create table If Not Exists Employee (
+    id int,
     salary int
 );
 Truncate table Employee;
@@ -17,9 +16,5 @@ values ('3', '300');
 select *
 from Employee;
 
-select ifnull((select distinct salary
-               from Employee
-               order by salary desc
-               limit 1, 1), null
-       ) AS SecondHighestSalary;
+select ifnull((select distinct salary from Employee order by salary desc limit 1, 1), null) AS SecondHighestSalary;
 

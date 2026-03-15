@@ -1,12 +1,11 @@
 create database P0570;
 use P0570;
 
-Create table If Not Exists Employee
-(
-    id         int,
-    name       varchar(255),
+Create table If Not Exists Employee (
+    id int,
+    name varchar(255),
     department varchar(255),
-    managerId  int
+    managerId int
 );
 Truncate table Employee;
 insert into Employee (id, name, department, managerId)
@@ -32,7 +31,4 @@ having count(managerId) >= 5;
 
 select name
 from Employee
-where id in (select managerId
-            from Employee
-            group by managerId
-            having count(managerId) >= 5);
+where id in (select managerId from Employee group by managerId having count(managerId) >= 5);

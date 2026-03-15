@@ -1,9 +1,8 @@
 create database P0182;
 use P0182;
 
-Create table If Not Exists Person
-(
-    id    int,
+Create table If Not Exists Person (
+    id int,
     email varchar(255)
 );
 Truncate table Person;
