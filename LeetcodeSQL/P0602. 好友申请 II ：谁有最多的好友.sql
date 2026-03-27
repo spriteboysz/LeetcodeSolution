@@ -31,6 +31,6 @@ from (select r1.requester_id a, r1.accepter_id b
       union
       select r2.accepter_id a, r2.requester_id b
       from RequestAccepted r2) t
-group by a
+group by id
 order by num desc
 limit 1;
