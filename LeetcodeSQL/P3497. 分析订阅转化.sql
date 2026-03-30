@@ -56,3 +56,28 @@ from UserActivity;
 select user_id, activity_type, avg(activity_duration)
 from UserActivity
 group by user_id, activity_type;
+
+select user_id, activity
+from (select user_id, activity_type, avg(activity_duration) activity
+      from UserActivity
+      group by user_id, activity_type) t
+where activity_type = 'free_trial';
+
+select user_id, activity
+from (select user_id, activity_type, avg(activity_duration) activity
+      from UserActivity
+      group by user_id, activity_type) t
+where activity_type = 'paid';
+
+select t1.user_id, round(t1.activity, 2) trial_avg_duration, round(t2.activity, 2) paid_avg_duration
+from (select user_id, activity
+      from (select user_id, activity_type, avg(activity_duration) activity
+            from UserActivity
+            group by user_id, activity_type) t
+      where activity_type = 'free_trial') t1
+         join (select user_id, activity
+               from (select user_id, activity_type, avg(activity_duration) activity
+                     from UserActivity
+                     group by user_id, activity_type) t
+               where activity_type = 'paid') t2 on t1.user_id = t2.user_id
+order by user_id;
