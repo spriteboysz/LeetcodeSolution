@@ -38,9 +38,9 @@ with t1 as (select student_id, subject, min(exam_date) min_date, max(exam_date) 
             from Scores
             group by student_id, subject
             having count(exam_date) > 1)
-select s.student_id, s.subject, s1.score first_score, s.score latest_score
+select s1.student_id, s1.subject, s1.score first_score, s2.score latest_score
 from t1
          left join Scores s1 on t1.subject = s1.subject and t1.student_id = s1.student_id and s1.exam_date = t1.min_date
-         left join Scores s on t1.subject = s.subject and t1.student_id = s.student_id and s.exam_date = t1.max_date
-having latest_score > first_score
+         left join Scores s2 on t1.subject = s2.subject and t1.student_id = s2.student_id and s2.exam_date = t1.max_date
+where s1.score < s2.score
 order by student_id, subject;
