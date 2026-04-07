@@ -82,8 +82,7 @@ from (select distinct store_id,
          left join inventory i on t1.store_id = i.store_id and t1.name = i.product_name;
 
 select t2.store_id, t2.name, i.quantity, i.price
-from (select distinct store_id,
-          first_value(product_name) over (partition by store_id order by price, quantity) as name
+from (select distinct store_id, first_value(product_name) over (partition by store_id order by price, quantity) as name
       from inventory) t2
          left join inventory i on t2.store_id = i.store_id and t2.name = i.product_name;
 
