@@ -9,9 +9,25 @@ Description:
 
 
 class Solution:
-    pass
+    def maximumXor(self, s: str, t: str) -> str:
+        cnt0, cnt1 = t.count('0'), t.count('1')
+        ss = ''
+        for ch in s:
+            if ch == '0' and cnt1 > 0:
+                ss += '1'
+                cnt1 -= 1
+            elif ch == '0':
+                ss += '0'
+                cnt0 -= 1
+            elif ch == '1' and cnt0 > 0:
+                ss += '1'
+                cnt0 -= 1
+            else:
+                ss += '0'
+                cnt1 -= 1
+        return ss
 
 
 if __name__ == '__main__':
-    solution = Solution()
+    solution = Solution().maximumXor(s="0110", t="1110")
     print(solution)
