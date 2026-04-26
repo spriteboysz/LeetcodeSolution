@@ -7,12 +7,10 @@ FileName: P3895. 统计数字出现总次数.py
 Description:
 """
 
-from collections import Counter
-
 
 class Solution:
     def countDigitOccurrences(self, nums: list[int], digit: int) -> int:
-        return sum(Counter(str(num)).get(str(digit), 0) for num in nums)
+        return sum(str(num).count(str(digit)) for num in nums)
 
 
 if __name__ == '__main__':
