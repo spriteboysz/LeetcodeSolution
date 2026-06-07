@@ -15,7 +15,7 @@ class Solution:
     def uncommonFromSentences(self, s1: str, s2: str) -> List[str]:
         counter1, counter2 = Counter(s1.split()), Counter(s2.split())
         uncommon = []
-        for word in {*list(counter1.keys()), *list(counter2.keys())}:
+        for word in {*counter1.keys(), *counter2.keys()}:
             if counter1.get(word, 0) + counter2.get(word, 0) == 1:
                 uncommon.append(word)
         return uncommon

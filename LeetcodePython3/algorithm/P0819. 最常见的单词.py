@@ -7,8 +7,8 @@ FileName: P0819. 最常见的单词.py
 Description:
 """
 import re
-from typing import List
 from collections import Counter
+from typing import List
 
 
 class Solution:
