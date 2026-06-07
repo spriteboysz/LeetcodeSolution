@@ -20,8 +20,7 @@ class Solution:
             counter = Counter(word)
             for i in range(26):
                 alphabet[i] = min(alphabet[i], counter.get(chr(ord('a') + i), 0))
-        ans = [[chr(ord('a') + i)] * cnt for i, cnt in enumerate(alphabet)]
-        return sum(ans, [])
+        return sum([[chr(ord('a') + i)] * cnt for i, cnt in enumerate(alphabet)], [])
 
 
 if __name__ == '__main__':
