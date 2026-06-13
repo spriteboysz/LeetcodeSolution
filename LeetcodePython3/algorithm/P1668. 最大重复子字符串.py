@@ -15,7 +15,6 @@ class Solution:
                 return i
         return 0
 
-
 if __name__ == '__main__':
     solution = Solution().maxRepeating(sequence="ababc", word="ab")
     print(solution)
