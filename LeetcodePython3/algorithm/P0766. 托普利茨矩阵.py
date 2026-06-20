@@ -17,7 +17,9 @@ class Solution:
         for i, row in enumerate(matrix):
             for j, num in enumerate(row):
                 dic[i - j].add(num)
-        return all(len(v) == 1 for v in dic.values())
+                if len(dic[i - j]) > 1:
+                    return False
+        return True
 
 
 if __name__ == '__main__':
