@@ -29,5 +29,5 @@ class Solution:
 
 
 if __name__ == '__main__':
-    solution = Solution().addTwoNumbers(ListNode([2, 4, 3]), ListNode([5, 6, 4]))
+    solution = Solution().addTwoNumbers(ListNode('[2, 4, 3]'), ListNode([5, 6, 4]))
     print(solution)

@@ -2,48 +2,52 @@
 # coding=utf-8
 """
 Author: Deean
-Date: 2024-11-10 17:14
+Date: 2026-07-05 23:25
 FileName: node
 Description:
 """
+
 from collections import deque
 from typing import Union, Any
 
 
 class ListNode:
-    def __init__(self, val: Any = 0):
-        if isinstance(val, list) or isinstance(val, str) and val.startswith('[') and val.endswith(']'):
-            head = self.create(val)
+    """
+    链表类
+    """
+
+    def __init__(self, val: Any = 0, next_=None):
+        if isinstance(val, str) and val.strip().startswith('[') and val.strip().endswith(']'):
+            val = val.strip()[1:-1].split(',')
+        if isinstance(val, list):
+            head = self._build(val)
             if isinstance(head, ListNode):
                 self.val = head.val
                 self.next = head.next
         else:
             self.val = val
-            self.next = None
+            self.next = next_
 
     def __str__(self):
         if not self:
             return ''
-        values, cur = [], self
-        while cur:
-            values.append(str(cur.val))
-            cur = cur.next
-        return '[' + ','.join(values) + ']'
+        values, curr = [], self
+        while curr:
+            values.append(str(curr.val))
+            curr = curr.next
+        return '<ListNode>: [' + ', '.join(values) + ']'
 
     @classmethod
-    def create(cls, data: Union[list, str] = ''):
-        if not data:
-            return []
-        if isinstance(data, str):
-            values = data[1:-1].split(',')
-        else:
-            values = data
+    def _build(cls, values: Union[list]):
+        if not values:
+            return None
 
-        dummy = ListNode(-1)
-        cur = dummy
-        for v in values:
-            cur.next = ListNode(int(v))
-            cur = cur.next
+        curr = dummy = ListNode(-1)
+        for value in values:
+            if isinstance(value, int):
+                value = int(value)
+            curr.next = ListNode(value)
+            curr = curr.next
         return dummy.next
 
 
