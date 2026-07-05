@@ -7,13 +7,19 @@ FileName: node
 Description:
 """
 from collections import deque
-from typing import Union
+from typing import Union, Any
 
 
 class ListNode:
-    def __init__(self, val=0, next_=None):
-        self.val = val
-        self.next = next_
+    def __init__(self, val: Any = 0):
+        if isinstance(val, list) or isinstance(val, str) and val.startswith('[') and val.endswith(']'):
+            head = self.create(val)
+            if isinstance(head, ListNode):
+                self.val = head.val
+                self.next = head.next
+        else:
+            self.val = val
+            self.next = None
 
     def __str__(self):
         if not self:
@@ -28,8 +34,11 @@ class ListNode:
     def create(cls, data: Union[list, str] = ''):
         if not data:
             return []
-        data = str(data)
-        values = data[1:-1].split(',')
+        if isinstance(data, str):
+            values = data[1:-1].split(',')
+        else:
+            values = data
+
         dummy = ListNode(-1)
         cur = dummy
         for v in values:
@@ -83,7 +92,7 @@ class TreeNode:
 
 
 if __name__ == '__main__':
-    ll = ListNode.create('[1,2,3,4,5]')
+    ll = ListNode([1, 2, 3, 4, 5])
     print(ll)
 
     tree = TreeNode.create("[4,8,5,0,1,null,6]")
