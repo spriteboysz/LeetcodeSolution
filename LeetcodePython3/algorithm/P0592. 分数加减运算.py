@@ -20,5 +20,5 @@ class Solution:
 
 
 if __name__ == '__main__':
-    solution = Solution().fractionAddition(expression="-1/2+1/2+1/3")
+    solution = Solution().fractionAddition(expression="-1/200+1/2+1/3")
     print(solution)
