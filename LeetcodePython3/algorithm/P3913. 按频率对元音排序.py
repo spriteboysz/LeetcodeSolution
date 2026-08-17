@@ -17,6 +17,7 @@ class Solution:
                 dic[ch].append(i)
         vowels = sorted(dic, key=lambda c: (-len(dic.get(c, [])), dic.get(c, [])[0]))
         vowels = list(''.join(c * len(dic.get(c, [])) for c in vowels))[::-1]
+
         ss = list(s)
         for i, ch in enumerate(ss):
             if ch in 'aeiou':
