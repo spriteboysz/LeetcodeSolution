@@ -11,7 +11,11 @@ from typing import List
 
 class Solution:
     def minOperations(self, boxes: str) -> List[int]:
-        pass
+        operations = []
+        for i in range(len(boxes)):
+            cnt = sum(abs(j - i) * int(boxes[j]) for j in range(len(boxes)))
+            operations.append(cnt)
+        return operations
 
 
 if __name__ == '__main__':
