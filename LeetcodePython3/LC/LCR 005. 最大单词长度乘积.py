@@ -17,7 +17,6 @@ class Solution:
             for ch in word:
                 v |= 1 << (ord(ch) - ord('a'))
             dic[word] = v
-        print(dic)
 
         cnt = 0
         for i, w1 in enumerate(words):
