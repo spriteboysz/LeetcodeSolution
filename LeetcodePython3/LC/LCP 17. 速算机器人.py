@@ -3,7 +3,7 @@
 """
 Author: Deean
 Date: 2026-09-01 21:10
-FileName: LCP/LCP 17. 速算机器人.py
+FileName: LC/LC 17. 速算机器人.py
 Description: 
 """
 

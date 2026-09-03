@@ -3,7 +3,7 @@
 """
 Author: Deean
 Date: 2026-08-31 23:29
-FileName: LCP/P2161. 根据给定数字划分数组.py
+FileName: LC/P2161. 根据给定数字划分数组.py
 Description: 
 """
 from typing import List

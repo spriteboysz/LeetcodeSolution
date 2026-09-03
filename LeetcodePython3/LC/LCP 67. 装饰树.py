@@ -3,7 +3,7 @@
 """
 Author: Deean
 Date: 2026-09-01 11:01
-FileName: LCP/LCP 67. 装饰树.py
+FileName: LC/LC 67. 装饰树.py
 Description: 
 """
 from typing import Optional

@@ -3,7 +3,7 @@
 """
 Author: Deean
 Date: 2026-08-31 23:10
-FileName: LCP/P1282. 用户分组.py
+FileName: LC/P1282. 用户分组.py
 Description: 
 """
 from collections import defaultdict

@@ -3,7 +3,7 @@
 """
 Author: Deean
 Date: 2026-09-01 12:02
-FileName: LCP/P2966. 划分数组并满足最大差限制.py
+FileName: LC/P2966. 划分数组并满足最大差限制.py
 Description: 
 """
 from typing import List

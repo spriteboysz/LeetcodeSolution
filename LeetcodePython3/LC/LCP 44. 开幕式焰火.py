@@ -3,7 +3,7 @@
 """
 Author: Deean
 Date: 2026-09-01 11:44
-FileName: LCP/LCP 44. 开幕式焰火.py
+FileName: LC/LC 44. 开幕式焰火.py
 Description: 
 """
 from utils.node import TreeNode

@@ -3,7 +3,7 @@
 """
 Author: Deean
 Date: 2026-08-31 23:06
-FileName: LCP/LCP 06. 拿硬币.py
+FileName: LC/LC 06. 拿硬币.py
 Description: 
 """
 from typing import List

@@ -3,7 +3,7 @@
 """
 Author: Deean
 Date: 2026-09-01 21:14
-FileName: LCP/P3159. 查询数组中元素的出现位置.py
+FileName: LC/P3159. 查询数组中元素的出现位置.py
 Description: 
 """
 from typing import List
