@@ -12,7 +12,15 @@ from typing import List
 class Solution:
     def subSort(self, array: List[int]) -> List[int]:
         sorted_array = sorted(array)
-
+        if sorted_array == array:
+            return [-1, -1]
+        i = 0
+        while sorted_array[i] == array[i]:
+            i += 1
+        j = len(array) - 1
+        while sorted_array[j] == array[j]:
+            j -= 1
+        return [i, j]
 
 
 if __name__ == '__main__':
