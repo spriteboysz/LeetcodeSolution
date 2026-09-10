@@ -1,0 +1,25 @@
+#! /usr/bin/env python
+# coding=utf-8
+"""
+Author: Deean
+Date: 2026-09-09 09:10
+FileName: 面试题/面试题 10.11. 峰与谷.py
+Description: 
+"""
+from typing import List
+
+
+class Solution:
+    def wiggleSort(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        nums.sort()
+        m = (len(nums) + 1) // 2
+        nums[::2], nums[1::2] = nums[:m], nums[m:]
+
+        print(nums)
+
+
+if __name__ == '__main__':
+    Solution().wiggleSort([5, 3, 1, 2, 3])
